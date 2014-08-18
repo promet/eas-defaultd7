@@ -121,5 +121,10 @@
     "drupal/user_form_test": "self.version",
     "drupal/xmlrpc_test": "self.version"
   },
-  "type": "drupal-core"
+  "type": "drupal-core",
+  "extra": {
+    "branch-alias": {
+      "dev-7.x-promet": "7.x-dev"
+    }
+  }
 }
