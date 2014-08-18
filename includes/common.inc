@@ -7926,14 +7926,14 @@ function entity_uri($entity_type, $entity) {
     return NULL;
   }
 
-  // Invoke the callback to get the URI. If there is no callback, return NULL.
   if (isset($uri_callback) && function_exists($uri_callback)) {
-    $uri = $uri_callback($entity);
-    // Pass the entity data to url() so that alter functions do not need to
-    // lookup this entity again.
-    $uri['options']['entity_type'] = $entity_type;
-    $uri['options']['entity'] = $entity;
-    return $uri;
+    if ($uri = $uri_callback($entity)) {
+      // Pass the entity data to url() so that alter functions do not need to
+      // lookup this entity again.
+      $uri['options']['entity_type'] = $entity_type;
+      $uri['options']['entity'] = $entity;
+      return $uri;
+    }
   }
 }
 
