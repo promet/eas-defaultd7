@@ -1,4 +1,4 @@
-
+TEST THE GIT COMMIT HOOK
 Drupal 7.32, xxxx-xx-xx (development version)
 -----------------------
 
